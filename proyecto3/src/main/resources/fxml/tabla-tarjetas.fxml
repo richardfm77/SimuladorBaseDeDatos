@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.collections.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.control.cell.*?>
+<?import javafx.scene.layout.*?>
+<?import mx.unam.ciencias.icc.fx.*?>
+
+<GridPane alignment="CENTER" hgap="10.0" vgap="10.0"
+          fx:controller="mx.unam.ciencias.icc.fx.ControladorTablaTarjetas"
+          xmlns:fx="http://javafx.com/fxml">
+  <padding>
+    <Insets bottom="10.0" left="10.0" right="10.0" top="0.0" />
+  </padding>
+  <TableView fx:id="tabla" GridPane.columnIndex="0" GridPane.rowIndex="1"
+             GridPane.hgrow="ALWAYS" GridPane.vgrow="ALWAYS">
+    <columnResizePolicy>
+      <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+    </columnResizePolicy>
+    <columns>
+      <TableColumn fx:id="columnaNombre" text="Nombre del propietario">
+        <cellValueFactory>
+          <PropertyValueFactory property="nombreDelPropietario" />
+        </cellValueFactory>
+      </TableColumn>
+      <TableColumn fx:id="columnaNumTarjeta" text="# Tarjeta">
+        <cellValueFactory>
+          <PropertyValueFactory property="numeroDeTarjeta" />
+        </cellValueFactory>
+      </TableColumn>
+      <TableColumn fx:id="columnaCodigo" text="Código de seguridad"
+                   style="-fx-alignment: CENTER;">
+        <cellFactory>
+          <FabricaFormatoCelda formato="\%3d" />
+        </cellFactory>
+        <cellValueFactory>
+          <PropertyValueFactory property="codigoDeSeguridad" />
+        </cellValueFactory>
+      </TableColumn>
+      <TableColumn fx:id="columnaFecha" text="Fecha de vencimiento"
+                   style="-fx-alignment: CENTER;">
+        <cellValueFactory>
+          <PropertyValueFactory property="fechaDeVencimiento" />
+        </cellValueFactory>
+      </TableColumn>
+      <TableColumn fx:id="columnaSaldo" text="Saldo"
+                   style="-fx-alignment: CENTER;">
+        <cellFactory>
+          <FabricaFormatoCelda formato="\%2.2f" />
+        </cellFactory>
+        <cellValueFactory>
+          <PropertyValueFactory property="saldo" />
+        </cellValueFactory>
+      </TableColumn>
+    </columns>
+    <sortOrder>
+      <fx:reference source="columnaNombre" />
+    </sortOrder>
+  </TableView>
+</GridPane>

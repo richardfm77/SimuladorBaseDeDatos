@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import mx.unam.ciencias.icc.*?>
+<?import mx.unam.ciencias.icc.fx.*?>
+
+<AnchorPane styleClass="background"
+            prefWidth="360.0" prefHeight="210.0"
+            fx:controller="mx.unam.ciencias.icc.fx.ControladorFormaTarjeta"
+            xmlns:fx="http://javafx.com/fxml">
+  <stylesheets>
+    <URL value="@style.css" />
+  </stylesheets>
+  <children>
+    <GridPane prefWidth="360.0" prefHeight="120.0"
+              AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0"
+              AnchorPane.topAnchor="10.0" AnchorPane.bottomAnchor="10.0" >
+      <columnConstraints>
+        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" maxWidth="80.0"
+                           prefWidth="80.0" />
+        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" maxWidth="300.0"
+                           prefWidth="250.0" />
+      </columnConstraints>
+      <rowConstraints>
+        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="NEVER" />
+        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="NEVER" />
+        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="NEVER" />
+        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="NEVER" />
+        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="NEVER" />
+      </rowConstraints>
+      <children>
+        <Label text="Nombre:" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+        <Label text="# Tarjeta:" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+        <Label text="Código:" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+        <Label text="Fecha:" GridPane.columnIndex="0" GridPane.rowIndex="3" />
+        <Label text="Saldo:" GridPane.columnIndex="0" GridPane.rowIndex="4" />
+        <EntradaVerificable fx:id="entradaNombre"
+                            style="-fx-background-color:FFCCCC;"
+                            GridPane.columnIndex="1" GridPane.rowIndex="0">
+          <tooltip>
+            <Tooltip text="El nombre no puede ser vacío"/>
+          </tooltip>
+        </EntradaVerificable>
+        <EntradaVerificable fx:id="entradaNumTarjeta"
+                            style="-fx-background-color:FFCCCC;"
+                            GridPane.columnIndex="1" GridPane.rowIndex="1">
+          <tooltip>
+            <Tooltip text="El número de tarjeta debe ser únicamente 16 dígitos."/>
+          </tooltip>
+        </EntradaVerificable>
+        <EntradaVerificable fx:id="entradaCodigo"
+                            style="-fx-background-color:FFCCCC;"
+                            GridPane.columnIndex="1" GridPane.rowIndex="2">
+          <tooltip>
+            <Tooltip text="El código debe ser de 3 dígitos"/>
+          </tooltip>
+        </EntradaVerificable>
+        <EntradaVerificable fx:id="entradaFecha"
+                            style="-fx-background-color:FFCCCC;"
+                            GridPane.columnIndex="1" GridPane.rowIndex="3">
+          <tooltip>
+            <Tooltip text="La fecha debe tener el formato: m/a."/>
+          </tooltip>
+        </EntradaVerificable>
+        <EntradaVerificable fx:id="entradaSaldo"
+                            style="-fx-background-color:FFCCCC;"
+                            GridPane.columnIndex="1" GridPane.rowIndex="4">
+          <tooltip>
+            <Tooltip text="El saldo debe ser mayor igual a 0."/>
+          </tooltip>
+        </EntradaVerificable>
+      </children>
+    </GridPane>
+    <ButtonBar AnchorPane.bottomAnchor="10.0" AnchorPane.rightAnchor="10.0">
+      <buttons>
+        <Button fx:id="botonAceptar" disable="true" mnemonicParsing="false"
+                onAction="#aceptar" text="Aceptar" prefWidth="120.0" />
+        <Button mnemonicParsing="false" onAction="#cancelar" text="Cancelar"
+                prefWidth="120.0" defaultButton="true" />
+      </buttons>
+    </ButtonBar>
+  </children>
+</AnchorPane>
