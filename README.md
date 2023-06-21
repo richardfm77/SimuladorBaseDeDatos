@@ -65,7 +65,3 @@ Para conectar el cliente se requiere que el servidor ya esté funcionando en un 
 2. Introduzada la *ip* del servidor y el puerto de escucha.
 
 3. Ya puede hacer operaciones *CRUD* con la base de datos.
-
-## Contacto.
-
-Ricardo Flores Mata - ricardo_fm77@ciencias.unam.mx
